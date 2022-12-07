@@ -3,7 +3,8 @@
 For better understanding [see here](./cs1680_fp_summary.pdf)
 
 ## Overview
-A webserver implemented without net/http Golang package that implements subset of HTTP 1.1. We use sockets to establish each connection with the client (which could be a web browser or anything.)
+A webserver implemented without net/http Golang package that implements subset of HTTP 1.1. We use sockets to establish each connection with the client (which could be a web browser or anything)
+In the second part, we implemented other related protocols such as Common Gateway Interface, Transport Layer Security and Mutual Transport Layer Security.
 
 ## Structure
 tl;dr:
@@ -11,7 +12,7 @@ tl;dr:
 - Under pkg we have all the helper functions
 - Under resources we have all the resources we are serving on this webserver
 ```
-nima-server
+ken-http
 │   README.md
 │   Makefile
 |   http-client (after make)
@@ -24,6 +25,12 @@ nima-server
 │   |___server
 |       |   main.go
 |   |___cgi
+|       |   main.go
+│   └───certificate
+│       │   main.go
+│   |___server-mtls
+|       |   main.go
+|   |___server-tls
 |       |   main.go
 │   
 └───pkg
@@ -38,6 +45,8 @@ nima-server
 │       │   parse.go
 │   |___protocol
 |       |   protocol.go
+│   |___mycrypto
+|       |   mycrypto.go
 └───resources
 │   │  
 │   └───test_dependency
